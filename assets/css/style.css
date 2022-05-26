@@ -1,6 +1,5 @@
 @import "./globals";
 @import "./variables";
-@import "./queries";
 
 
 body{
@@ -8,6 +7,10 @@ body{
   font-family: 'M PLUS 1 Code', sans-serif;
   color: var(--text-color);
 }
+
+/* ======================== */
+/* ------- navbar -------- */
+/* =========================*/
 
 .nav-header{
   background-color: var(--foreground-color);
@@ -47,3 +50,43 @@ body{
 .nav-mode svg:hover{
   transform: scale(1.1);
 }
+
+/* ======================== */
+/* ------- info-section -------- */
+/* =========================*/
+
+.info-section{
+  background-color: var(--foreground-color);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 20px;
+  margin: 26px 0;
+  padding: 16px 20px;
+  box-shadow: 1px 1px 7px 1px rgba(0, 0, 0, 0.05);
+}
+
+.info-section a{
+  color: var(--primary-color-300);
+  transition: all 0.2s ease;
+
+}
+
+.info-section a:hover{
+  opacity: 0.7;
+}
+
+
+.separator{
+  border: 1px solid var(--lines-color);
+  border-radius: 8px;
+  height: 50px;
+  margin: 0 20px;
+  align-self: center;
+  
+}
+.general-info,.form-info{
+  flex: 1;
+}
+
+

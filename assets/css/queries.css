@@ -5,6 +5,12 @@
   .container{
     width: 90%;
   }
+  .general-info,.separator{
+    display: none;
+  }
+  .form-info{
+    text-align: center;
+  }
 }
 
 
@@ -16,6 +22,14 @@
     display: none;
   }
 
+  .info-section{
+
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin: 16px 0;
+    padding: 8px 10px;
+  }
 }
 
 
