@@ -34,6 +34,7 @@ body{
 
 .btn-about{
   background-color: var(--primary-color-100);
+  color: var(--primary-color-300);
   border: 2px solid var(--primary-color-200);
   transition: all ease 0.2s;
 }
@@ -71,6 +72,7 @@ body{
 .info-section a{
   color: var(--primary-color-300);
   transition: all 0.2s ease;
+  font-weight: 500;
 }
 
 .info-section a:hover{
@@ -89,6 +91,7 @@ body{
 
 .general-info,.form-info{
   flex: 1;
+  font-weight: 300;
 }
 
 /* ======================== */
@@ -187,6 +190,14 @@ input[type=search]::placeholder{
 
 .card-data{
   padding: 10px 30px 20px 30px;
+}
+
+.card-title{
+  font-size: 20px;
+}
+
+.card-description{
+  font-weight: 300;
 }
 
 .footer{
