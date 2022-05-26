@@ -48,6 +48,7 @@ body{
   cursor: pointer;
   transition: all 0.2s ease;
 }
+
 .nav-mode svg:hover{
   transform: scale(1.1);
 }
@@ -85,8 +86,59 @@ body{
   align-self: center;
   
 }
+
 .general-info,.form-info{
   flex: 1;
 }
 
+/* ======================== */
+/* ----- filters-header ----- */
+/* =========================*/
 
+.filters-header{
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+align-items: center;
+}
+
+.search{
+  flex: 2;
+}
+
+.topic,.stack{
+  flex: 1;
+}
+
+.input-control{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.input-control input,
+.input-control select{
+  width: 100%;
+  min-width: 150px;
+  border-radius: 9px;
+  padding: 1px 10px 3px 10px;
+  border: 1px solid var(--lines-color);
+  font-size: 14px;
+}
+
+.input-control select{
+  background-color: var(--foreground-color);
+  color: var(--text-color);
+
+}
+
+input[type=search]:focus-visible,
+select:focus-visible{
+  outline: 1px solid var(--primary-color-200);
+  box-shadow: 0px 0px 0px 2px var(--primary-color-100);
+}
+
+input[type=search]::placeholder{
+  font-size: 14px;
+  color: var(--lines-color);
+}
