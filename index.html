@@ -2,12 +2,113 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./assets/logo/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <!-- google font import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Frontend Goodies</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div class="modal"></div>
+    <div id="app">
+      <header class="nav-header">
+        <nav class="navbar container">
+          <ul class="nav-items">
+
+            <li class="nav-item logo">
+              <h1 class="sr-only">Frontend Goodies</h1>
+              <a href="/">
+                <img src="./assets/logo/logo.svg" alt="logo">
+              </a>
+            </li>
+
+            <li class="nav-item nav-text">A collection of Frontend tools and goodies</li>
+
+            <li class="nav-item nav-btn">
+              <button class="btn btn-about">About Us</button>
+            </li>
+
+            <li class="nav-item nav-mode">
+              <svg>
+                <use xlink:href='/assets/icons/moon.svg#moon'></use>
+              </svg>
+            </li>
+
+          </ul>
+        </nav>
+      </header>
+
+      <main class="main-container container">
+        <section class="info-section"></section>
+        <section class="main-section">
+          <header class="filters-header">
+            <div class="input-control">
+              <label for="search">Search:</label>
+              <input type="search" name="search" id="search">
+            </div>
+
+            <div class="input-control">
+              <label for="topic">Topic:</label>
+              <select name="topic" id="topic">
+                <option value="actual">Display</option>
+                <option value="actual">Display</option>
+                <option value="actual">Display</option>
+              </select>
+            </div>
+
+            <div class="input-control">
+              <label for="stack">Stack:</label>
+              <select name="stack" id="stack">
+                <option value="actual">Display</option>
+                <option value="actual">Display</option>
+                <option value="actual">Display</option>
+              </select>
+            </div>
+          </header>
+
+          <div class="cards-container">
+            <ul>
+              <li class="card">
+                <div class="card-img">
+                  <img src="" alt="">
+                </div>
+                <div class="card-data">
+                  <h2 class="card-title">title</h2>
+                  <p class="card-description">vdfvadsva</p>
+                </div>
+              </li>
+              
+              <li class="card">
+                <div class="card-img">
+                  <img src="" alt="">
+                </div>
+                <div class="card-data">
+                  <h2 class="card-title">title</h2>
+                  <p class="card-description">vdfvadsva</p>
+                </div>
+              </li>
+              
+              <li class="card">
+                <div class="card-img">
+                  <img src="" alt="">
+                </div>
+                <div class="card-data">
+                  <h2 class="card-title">title</h2>
+                  <p class="card-description">vdfvadsva</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          
+          
+        </section>
+
+      </main>
+
+      <footer class="container">built with love by osama and sobhi</footer>
+    </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>

@@ -1,0 +1,27 @@
+/**************************/
+/* BELOW 940px (Tablets) */
+/**************************/
+@media (max-width: 940px) {
+  .container{
+    width: 90%;
+  }
+}
+
+
+/**************************/
+/* BELOW 690px (Smaller tablets) */
+/**************************/
+@media (max-width: 690px) {
+  .nav-text{
+    display: none;
+  }
+
+}
+
+
+/**************************/
+/* BELOW 480px (Phones) */
+/**************************/
+@media (max-width: 480px) {
+
+}
