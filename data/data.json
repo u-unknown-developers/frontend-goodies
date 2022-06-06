@@ -18,7 +18,7 @@
     {
       "id": 1,
       "title": "first goodie",
-      "img": "./data/thumbnails/1.png",
+      "img": "https://raw.githubusercontent.com/u-unknown-developers/frontend-goodies/main/data/thumbnails/1.png",
       "link": "https://www.cssmatic.com/box-shadow",
       "description": "this is a long description for the first goodie. I see it is a great tool",
       "topic": "shadows",
@@ -28,7 +28,7 @@
     {
       "id": 2,
       "title": "second goodie",
-      "img": "/data/thumbnails/2.png",
+      "img": "https://raw.githubusercontent.com/u-unknown-developers/frontend-goodies/main/data/thumbnails/2.png",
       "link": "https://www.cssmatic.com/box-shadow",
       "description": "this is a long description for the second goodie. I see it is a great tool",
       "topic": "gradient",
