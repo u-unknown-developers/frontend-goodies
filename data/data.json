@@ -1,0 +1,79 @@
+{
+  "topics": [
+    "shadows",
+    "animations",
+    "gradient",
+    "patterns",
+    "RegEx",
+    "colors"
+  ],
+  "stacks": [
+    "css",
+    "javascript",
+    "UI/UX",
+    "react",
+    "vue"
+  ],
+  "goodies": [
+    {
+      "id": 1,
+      "title": "first goodie",
+      "img": "./data/thumbnails/1.png",
+      "link": "https://www.cssmatic.com/box-shadow",
+      "description": "this is a long description for the first goodie. I see it is a great tool",
+      "topic": "shadows",
+      "stack": "javascript",
+      "keywords" : ["shadows","php","ui","box shadow"]
+    },
+    {
+      "id": 2,
+      "title": "second goodie",
+      "img": "./data/thumbnails/2.png",
+      "link": "https://www.cssmatic.com/box-shadow",
+      "description": "this is a long description for the second goodie. I see it is a great tool",
+      "topic": "gradient",
+      "stack": "css",
+      "keywords" : ["shadows","css","ui","box shadow","lol"]
+    },
+    {
+      "id": 3,
+      "title": "third goodie",
+      "img": "https://placekitten.com/g/500/300",
+      "link": "https://www.cssmatic.com/box-shadow",
+      "description": "this is a long description for the third goodie. I see it is a great tool",
+      "topic": "shadows",
+      "stack": "javascript",
+      "keywords" : ["shadows","css","ui","box shadow"]
+    },
+    {
+      "id": 4,
+      "title": "fourth goodie",
+      "img": "https://placekitten.com/g/500/300",
+      "link": "https://www.cssmatic.com/box-shadow",
+      "description": "this is a long description for the fourth goodie. I see it is a great tool",
+      "topic": "colors",
+      "stack": "css",
+      "keywords" : ["shadows","css","ui","box shadow"]
+    },
+    {
+      "id": 5,
+      "title": "fifth goodie",
+      "img": "https://placekitten.com/g/500/300",
+      "link": "https://www.cssmatic.com/box-shadow",
+      "description": "this is a long description for the fifth goodie. I see it is a great tool",
+      "topic": "shadows",
+      "stack": "css",
+      "keywords" : ["shadows","css","ui","box shadow"]
+    },
+    {
+      "id": 6,
+      "title": "sixth goodie",
+      "img": "https://placekitten.com/g/500/300",
+      "link": "https://www.cssmatic.com/box-shadow",
+      "description": "this is a long description for the sixth goodie. I see it is a great tool",
+      "topic": "animation",
+      "stack": "javascript",
+      "keywords" : ["shadows","css","ui","box shadow"]
+    }
+  ]
+}
