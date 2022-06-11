@@ -2,6 +2,10 @@
 import "./assets/css/style.css";
 import "./assets/css/queries.css";
 import data from "./data/data.json";
+import darkLogo from "./assets/logo/logo-dark.svg";
+import lightLogo from "./assets/logo/logo-light.svg";
+import moonIcon from "./assets/icons/moon.svg";
+import sunIcon from "./assets/icons/sun.svg";
 
 const { goodies, topics, stacks } = data;
 
@@ -116,25 +120,28 @@ function handleStackSelect() {
 
 //toggle between light and dark theme
 function toggleTheme() {
-  let targetTheme = "light";
-  let targetIcon = "moon";
+  let targetTheme = "light",
+    targetIcon = "moon",
+    targetLogo = lightLogo,
+    targetLogoId = "sun";
 
   const currentTheme = document.documentElement.getAttribute("data-theme");
 
   if (currentTheme === "light") {
     targetTheme = "dark";
-    targetIcon = "sun";
+    targetLogo = darkLogo;
+    targetIcon = sunIcon;
+    targetLogoId = "sun";
   } else if (currentTheme === "dark") {
     targetTheme = "light";
-    targetIcon = "moon";
+    targetIcon = moonIcon;
+    targetLogo = lightLogo;
+    targetLogoId = "moon";
   }
 
   document.documentElement.setAttribute("data-theme", targetTheme);
-  logoImg.src = `/assets/logo/logo-${targetTheme}.svg`;
-  navModeBtnIcon.setAttribute(
-    "xlink:href",
-    `/assets/icons/${targetIcon}.svg#${targetIcon}`
-  );
+  logoImg.src = targetLogo;
+  navModeBtnIcon.setAttribute("xlink:href", `${targetIcon}#${targetLogoId}`);
   localStorage.setItem("theme", targetTheme);
 }
 
@@ -149,6 +156,6 @@ function toggleTheme() {
   if (storedTheme === "dark") {
     document.documentElement.setAttribute("data-theme", storedTheme);
     logoImg.src = `/assets/logo/logo-${storedTheme}.svg`;
-    navModeBtnIcon.setAttribute("xlink:href", "/assets/icons/sun.svg#sun");
+    navModeBtnIcon.setAttribute("xlink:href", `${sunIcon}#sun`);
   }
 })();
