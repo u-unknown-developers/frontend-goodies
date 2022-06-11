@@ -155,7 +155,7 @@ function toggleTheme() {
 
   if (storedTheme === "dark") {
     document.documentElement.setAttribute("data-theme", storedTheme);
-    logoImg.src = `/assets/logo/logo-${storedTheme}.svg`;
+    logoImg.src = darkLogo;
     navModeBtnIcon.setAttribute("xlink:href", `${sunIcon}#sun`);
   }
 })();
