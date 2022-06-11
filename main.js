@@ -9,6 +9,9 @@ const goodiesContainer = document.querySelector(".cards-container ul");
 const searchInput = document.querySelector("#search");
 const topicSelect = document.querySelector("#topic");
 const stackSelect = document.querySelector("#stack");
+const navModeBtn = document.querySelector(".nav-mode");
+const navModeBtnIcon = document.querySelector(".nav-mode > svg > use");
+const logoImg = document.querySelector(".logo > a > img");
 
 window.addEventListener("DOMContentLoaded", displayGoodies);
 window.addEventListener("DOMContentLoaded", addTopics);
@@ -17,6 +20,7 @@ window.addEventListener("DOMContentLoaded", addStacks);
 searchInput.addEventListener("input", handleSearch);
 topicSelect.addEventListener("change", handleTopicSelect);
 stackSelect.addEventListener("change", handleStackSelect);
+navModeBtn.addEventListener("click", toggleTheme);
 
 function displayGoodies() {
   goodiesContainer.innerHTML = goodies
@@ -109,3 +113,46 @@ function handleStackSelect() {
     }
   });
 }
+
+//toggle between light and dark theme
+function toggleTheme() {
+  let targetTheme = "light";
+  let targetIcon = "moon";
+
+  const currentTheme = document.documentElement.getAttribute("data-theme");
+
+  if (currentTheme === "light") {
+    targetTheme = "dark";
+    targetIcon = "sun";
+  } else if (currentTheme === "dark") {
+    targetTheme = "light";
+    targetIcon = "moon";
+  }
+
+  document.documentElement.setAttribute("data-theme", targetTheme);
+  logoImg.src = `./assets/logo/logo-${targetTheme}.svg`;
+  navModeBtnIcon.setAttribute(
+    "xlink:href",
+    `/assets/icons/${targetIcon}.svg#${targetIcon}`
+  );
+  localStorage.setItem("theme", targetTheme);
+}
+
+//checks local storage for theme or gets default system theme
+(function () {
+  let storedTheme =
+    localStorage.getItem("theme") ||
+    (window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light");
+
+  if (storedTheme === "dark") {
+    document.documentElement.setAttribute("data-theme", storedTheme);
+    logoImg.src = `./assets/logo/logo-${storedTheme}.svg`;
+    navModeBtnIcon.setAttribute("xlink:href", "/assets/icons/sun.svg#sun");
+  } else if (storedTheme === "light") {
+    document.documentElement.setAttribute("data-theme", storedTheme);
+    logoImg.src = `./assets/logo/logo-${storedTheme}.svg`;
+    navModeBtnIcon.setAttribute("xlink:href", "/assets/icons/moon.svg#moon");
+  }
+})();
