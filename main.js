@@ -130,7 +130,7 @@ function toggleTheme() {
   }
 
   document.documentElement.setAttribute("data-theme", targetTheme);
-  logoImg.src = `./assets/logo/logo-${targetTheme}.svg`;
+  logoImg.src = `/assets/logo/logo-${targetTheme}.svg`;
   navModeBtnIcon.setAttribute(
     "xlink:href",
     `/assets/icons/${targetIcon}.svg#${targetIcon}`
@@ -148,11 +148,7 @@ function toggleTheme() {
 
   if (storedTheme === "dark") {
     document.documentElement.setAttribute("data-theme", storedTheme);
-    logoImg.src = `./assets/logo/logo-${storedTheme}.svg`;
+    logoImg.src = `/assets/logo/logo-${storedTheme}.svg`;
     navModeBtnIcon.setAttribute("xlink:href", "/assets/icons/sun.svg#sun");
-  } else if (storedTheme === "light") {
-    document.documentElement.setAttribute("data-theme", storedTheme);
-    logoImg.src = `./assets/logo/logo-${storedTheme}.svg`;
-    navModeBtnIcon.setAttribute("xlink:href", "/assets/icons/moon.svg#moon");
   }
 })();
