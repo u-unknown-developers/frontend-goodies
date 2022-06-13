@@ -20,6 +20,7 @@ const logoImg = document.querySelector(".logo > a > img");
 window.addEventListener("DOMContentLoaded", displayGoodies);
 window.addEventListener("DOMContentLoaded", addTopics);
 window.addEventListener("DOMContentLoaded", addStacks);
+window.addEventListener("DOMContentLoaded", getStoredTheme);
 
 searchInput.addEventListener("input", handleSearch);
 topicSelect.addEventListener("change", handleTopicSelect);
@@ -120,42 +121,33 @@ function handleStackSelect() {
 
 //toggle between light and dark theme
 function toggleTheme() {
-  let targetTheme = "light",
-    targetIcon = "moon",
-    targetLogo = lightLogo,
-    targetLogoId = "sun";
-
   const currentTheme = document.documentElement.getAttribute("data-theme");
 
   if (currentTheme === "light") {
-    targetTheme = "dark";
-    targetLogo = darkLogo;
-    targetIcon = sunIcon;
-    targetLogoId = "sun";
+    changeDisplayTheme("dark", darkLogo, sunIcon, "sun");
   } else if (currentTheme === "dark") {
-    targetTheme = "light";
-    targetIcon = moonIcon;
-    targetLogo = lightLogo;
-    targetLogoId = "moon";
+    changeDisplayTheme("light", lightLogo, moonIcon, "moon");
   }
+}
 
+function changeDisplayTheme(targetTheme, targetLogo, targetIcon, targetIconId) {
   document.documentElement.setAttribute("data-theme", targetTheme);
   logoImg.src = targetLogo;
-  navModeBtnIcon.setAttribute("xlink:href", `${targetIcon}#${targetLogoId}`);
+  navModeBtnIcon.setAttribute("xlink:href", `${targetIcon}#${targetIconId}`);
   localStorage.setItem("theme", targetTheme);
 }
 
 //checks local storage for theme or gets default system theme
-(function () {
-  let storedTheme =
+function getStoredTheme() {
+  const storedTheme =
     localStorage.getItem("theme") ||
     (window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
       : "light");
 
   if (storedTheme === "dark") {
-    document.documentElement.setAttribute("data-theme", storedTheme);
-    logoImg.src = darkLogo;
-    navModeBtnIcon.setAttribute("xlink:href", `${sunIcon}#sun`);
+    changeDisplayTheme("dark", darkLogo, sunIcon, "sun");
+  } else if (storedTheme === "light") {
+    changeDisplayTheme("light", lightLogo, moonIcon, "moon");
   }
-})();
+}
