@@ -31,7 +31,7 @@ function displayGoodies() {
       <li class="card">
         <a href="${item.link}" target="_blank" rel="noopener noreferrer">
           <div class="card-img">
-            <img src="${item.img}" alt="${item.title} thumbnail" width="300px" loading="lazy">
+            <img src="${item.img}" alt="${item.title} thumbnail" width="300px">
           </div>
           <div class="card-data">
             <h2 class="card-title">${item.title}</h2>
