@@ -9,14 +9,20 @@ const goodiesContainer = document.querySelector(".cards-container ul");
 const searchInput = document.querySelector("#search");
 const topicSelect = document.querySelector("#topic");
 const stackSelect = document.querySelector("#stack");
+const navModeMoonIcon = document.querySelector(".dark");
+const navModeSunIcon = document.querySelector(".light");
+const navModeBtn = document.querySelector(".nav-mode");
 
 window.addEventListener("DOMContentLoaded", displayGoodies);
 window.addEventListener("DOMContentLoaded", addTopics);
 window.addEventListener("DOMContentLoaded", addStacks);
+window.addEventListener("DOMContentLoaded", setCurrentTheme);
 
 searchInput.addEventListener("input", handleSearch);
 topicSelect.addEventListener("change", handleTopicSelect);
 stackSelect.addEventListener("change", handleStackSelect);
+navModeBtn.addEventListener("click", toggleTheme);
+navModeSunIcon.addEventListener("click", toggleTheme);
 
 function displayGoodies() {
   goodiesContainer.innerHTML = goodies
@@ -108,4 +114,23 @@ function handleStackSelect() {
       goodiesCards[index].style.display = "none";
     }
   });
+}
+
+function toggleTheme(e) {
+  const iconName = e.target.classList[0];
+  document.documentElement.setAttribute("data-theme", iconName);
+  localStorage.setItem("theme", iconName);
+}
+
+//sets the theme to the local storage theme or default system theme
+function setCurrentTheme() {
+  const storedTheme =
+    localStorage.getItem("theme") ||
+    (window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light");
+
+  if (storedTheme === "dark") {
+    document.documentElement.setAttribute("data-theme", "dark");
+  }
 }
