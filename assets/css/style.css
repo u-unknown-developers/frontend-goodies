@@ -37,6 +37,8 @@ body{
   color: var(--primary-color-300);
   border: 2px solid var(--primary-color-200);
   transition: all ease 0.2s;
+  white-space: nowrap;
+
 }
 
 .btn-about:hover{
