@@ -9,8 +9,6 @@ const goodiesContainer = document.querySelector(".cards-container ul");
 const searchInput = document.querySelector("#search");
 const topicSelect = document.querySelector("#topic");
 const stackSelect = document.querySelector("#stack");
-const navModeMoonIcon = document.querySelector(".dark");
-const navModeSunIcon = document.querySelector(".light");
 const navModeBtn = document.querySelector(".nav-mode");
 
 window.addEventListener("DOMContentLoaded", displayGoodies);
@@ -22,7 +20,6 @@ searchInput.addEventListener("input", handleSearch);
 topicSelect.addEventListener("change", handleTopicSelect);
 stackSelect.addEventListener("change", handleStackSelect);
 navModeBtn.addEventListener("click", toggleTheme);
-navModeSunIcon.addEventListener("click", toggleTheme);
 
 function displayGoodies() {
   goodiesContainer.innerHTML = goodies
