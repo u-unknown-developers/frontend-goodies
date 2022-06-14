@@ -13,7 +13,7 @@ body {
 
 .nav-header {
   background-color: var(--foreground-color);
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 4px var(--shadow-grey-200);
 }
 
 .nav-items {
@@ -39,7 +39,7 @@ body {
 }
 
 .btn-about:hover {
-  box-shadow: 0px 0px 0px 4px #e1f9ff;
+  box-shadow: 0px 0px 0px 4px var(--shadow-blue);
 }
 
 .nav-mode svg {
@@ -51,6 +51,10 @@ body {
 
 .nav-mode svg:hover {
   transform: scale(1.1);
+}
+
+.nav-mode use {
+  pointer-events: none;
 }
 
 /* ======================== */
@@ -65,7 +69,7 @@ body {
   border-radius: 20px;
   margin: 26px 0;
   padding: 16px 20px;
-  box-shadow: 1px 1px 7px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 1px 1px 7px 1px var(--shadow-grey-100);
 }
 
 .info-section a {
@@ -159,7 +163,7 @@ input[type="search"]::placeholder {
 
 .card {
   background-color: var(--foreground-color);
-  box-shadow: 1px 1px 7px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 1px 1px 7px 1px var(--shadow-grey-100);
   border-radius: 20px;
   transition: all 0.2s ease;
 }

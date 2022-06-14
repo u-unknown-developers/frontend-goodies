@@ -2,14 +2,17 @@
 /* -------- reset --------- */
 /* =========================*/
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 * {
   margin: 0;
   padding: 0;
 }
-html, body {
+html,
+body {
   height: 100%;
   font-size: 16px;
 }
@@ -17,29 +20,49 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
-ul{
+ul {
   list-style: none;
 }
 
 /* =========================*/
 
-
-
 /* ======================== */
 /* ------- globals -------- */
 /* =========================*/
+html[data-theme="dark"] .dark,
+html[data-theme="dark"] .logo-light {
+  display: none;
+}
 
-.sr-only{
+html[data-theme="light"] .light,
+html[data-theme="light"] .logo-dark {
+  display: none;
+}
+
+.sr-only {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   height: 1px;
@@ -49,13 +72,13 @@ ul{
   width: 1px;
 }
 
-.container{
+.container {
   width: 70%;
   max-width: 1440px;
   margin: 0 auto;
 }
 
-.btn{
+.btn {
   padding: 3px 26px;
   cursor: pointer;
   border-radius: 8px;

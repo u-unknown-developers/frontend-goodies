@@ -2,10 +2,6 @@
 import "./assets/css/style.css";
 import "./assets/css/queries.css";
 import data from "./data/data.json";
-import darkLogo from "./assets/logo/logo-dark.svg";
-import lightLogo from "./assets/logo/logo-light.svg";
-import moonIcon from "./assets/icons/moon.svg";
-import sunIcon from "./assets/icons/sun.svg";
 
 const { goodies, topics, stacks } = data;
 
@@ -13,19 +9,20 @@ const goodiesContainer = document.querySelector(".cards-container ul");
 const searchInput = document.querySelector("#search");
 const topicSelect = document.querySelector("#topic");
 const stackSelect = document.querySelector("#stack");
+const navModeMoonIcon = document.querySelector(".dark");
+const navModeSunIcon = document.querySelector(".light");
 const navModeBtn = document.querySelector(".nav-mode");
-const navModeBtnIcon = document.querySelector(".nav-mode > svg > use");
-const logoImg = document.querySelector(".logo > a > img");
 
 window.addEventListener("DOMContentLoaded", displayGoodies);
 window.addEventListener("DOMContentLoaded", addTopics);
 window.addEventListener("DOMContentLoaded", addStacks);
-window.addEventListener("DOMContentLoaded", getStoredTheme);
+window.addEventListener("DOMContentLoaded", setCurrentTheme);
 
 searchInput.addEventListener("input", handleSearch);
 topicSelect.addEventListener("change", handleTopicSelect);
 stackSelect.addEventListener("change", handleStackSelect);
 navModeBtn.addEventListener("click", toggleTheme);
+navModeSunIcon.addEventListener("click", toggleTheme);
 
 function displayGoodies() {
   goodiesContainer.innerHTML = goodies
@@ -119,26 +116,14 @@ function handleStackSelect() {
   });
 }
 
-//toggle between light and dark theme
-function toggleTheme() {
-  const currentTheme = document.documentElement.getAttribute("data-theme");
-
-  if (currentTheme === "light") {
-    changeDisplayTheme("dark", darkLogo, sunIcon, "sun");
-  } else if (currentTheme === "dark") {
-    changeDisplayTheme("light", lightLogo, moonIcon, "moon");
-  }
+function toggleTheme(e) {
+  const iconName = e.target.classList[0];
+  document.documentElement.setAttribute("data-theme", iconName);
+  localStorage.setItem("theme", iconName);
 }
 
-function changeDisplayTheme(targetTheme, targetLogo, targetIcon, targetIconId) {
-  document.documentElement.setAttribute("data-theme", targetTheme);
-  logoImg.src = targetLogo;
-  navModeBtnIcon.setAttribute("xlink:href", `${targetIcon}#${targetIconId}`);
-  localStorage.setItem("theme", targetTheme);
-}
-
-//checks local storage for theme or gets default system theme
-function getStoredTheme() {
+//sets the theme to the local storage theme or default system theme
+function setCurrentTheme() {
   const storedTheme =
     localStorage.getItem("theme") ||
     (window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -146,8 +131,6 @@ function getStoredTheme() {
       : "light");
 
   if (storedTheme === "dark") {
-    changeDisplayTheme("dark", darkLogo, sunIcon, "sun");
-  } else if (storedTheme === "light") {
-    changeDisplayTheme("light", lightLogo, moonIcon, "moon");
+    document.documentElement.setAttribute("data-theme", "dark");
   }
 }
